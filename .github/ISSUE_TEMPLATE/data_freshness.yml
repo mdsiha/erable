@@ -1,0 +1,62 @@
+name: 📅 Outdated information
+description: Report that information shown by Erable is incorrect or out of date.
+title: "freshness: "
+labels: ["data-freshness", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Canadian rules and processes change. If you spotted information on
+        Erable that is incorrect or out of date, please tell us — we
+        re-crawl official sources weekly, but we sometimes miss things.
+
+        This is one of the most useful kinds of issues you can file.
+        Thank you.
+
+  - type: input
+    id: location
+    attributes:
+      label: Where did you see the issue?
+      description: Page URL, chat answer, or specific section.
+      placeholder: https://erable.app/ontario/ohip — section "Waiting period"
+    validations:
+      required: true
+
+  - type: textarea
+    id: outdated
+    attributes:
+      label: What does Erable currently say?
+      description: Paste or summarize the information that looks wrong.
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: What is the correct information?
+      description: If you know the correct version, share it here.
+
+  - type: input
+    id: source
+    attributes:
+      label: Official source
+      description: Link to the canada.ca, ontario.ca, or other official source that proves the correction.
+      placeholder: https://www.ontario.ca/page/health-insurance
+    validations:
+      required: true
+
+  - type: input
+    id: last_verified
+    attributes:
+      label: "Date shown on the page (if visible: 'Information vérifiée le ...')"
+      placeholder: "12 mars 2026"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of conduct
+      options:
+        - label: I agree to follow the [Code of Conduct](../CODE_OF_CONDUCT.md).
+          required: true

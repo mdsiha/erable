@@ -1,0 +1,98 @@
+version: 2
+
+updates:
+  # Frontend (Next.js / pnpm)
+  - package-ecosystem: "npm"
+    directory: "/frontend"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "America/Toronto"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(deps)"
+    labels:
+      - "dependencies"
+      - "frontend"
+    groups:
+      next:
+        patterns:
+          - "next"
+          - "@next/*"
+          - "react"
+          - "react-dom"
+      tooling:
+        patterns:
+          - "eslint*"
+          - "prettier*"
+          - "typescript"
+          - "@types/*"
+          - "vitest*"
+          - "@vitest/*"
+          - "@testing-library/*"
+          - "playwright*"
+          - "@playwright/*"
+
+  # Backend (Python)
+  - package-ecosystem: "pip"
+    directory: "/backend"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "America/Toronto"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(deps)"
+    labels:
+      - "dependencies"
+      - "backend"
+    groups:
+      fastapi:
+        patterns:
+          - "fastapi*"
+          - "starlette*"
+          - "uvicorn*"
+      tooling:
+        patterns:
+          - "ruff"
+          - "mypy"
+          - "pytest*"
+          - "factory-boy"
+          - "httpx"
+
+  # Docker base images
+  - package-ecosystem: "docker"
+    directory: "/backend"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    commit-message:
+      prefix: "chore(deps)"
+    labels:
+      - "dependencies"
+      - "docker"
+
+  - package-ecosystem: "docker"
+    directory: "/frontend"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    commit-message:
+      prefix: "chore(deps)"
+    labels:
+      - "dependencies"
+      - "docker"
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    commit-message:
+      prefix: "chore(deps)"
+    labels:
+      - "dependencies"
+      - "ci"

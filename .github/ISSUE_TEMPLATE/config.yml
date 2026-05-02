@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🔒 Security vulnerability
+    url: https://github.com/mdsiha/erable/blob/main/SECURITY.md
+    about: Do not open a public issue. Email security@erable.app — see SECURITY.md.
+  - name: 🔐 Privacy question
+    url: mailto:privacy@erable.app
+    about: For privacy or data-handling questions, email privacy@erable.app.
+  - name: 💬 General question
+    url: mailto:hello@erable.app
+    about: For general inquiries, email hello@erable.app.

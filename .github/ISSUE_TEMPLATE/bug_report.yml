@@ -1,0 +1,85 @@
+name: 🐛 Bug report
+description: Report a defect in Erable.
+title: "bug: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug report. Please fill in as
+        much information as possible so we can reproduce and fix the issue.
+
+        For security vulnerabilities, do not open a public issue. Email
+        `security@erable.app` instead — see [SECURITY.md](../SECURITY.md).
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: A clear and concise description of the bug.
+      placeholder: When I click X, I expected Y but got Z.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Numbered steps so we can reproduce the bug locally.
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      placeholder: I expected X to happen.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which part of the project is affected?
+      options:
+        - Frontend (Next.js)
+        - Backend (FastAPI)
+        - AI / RAG / Chat
+        - Document analysis / OCR
+        - Authentication
+        - Payments / Lemon Squeezy
+        - Affiliate tracking
+        - Documentation
+        - CI/CD
+        - Other / not sure
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser + OS, or where you encountered the bug.
+      placeholder: Firefox 130 / Fedora 44 / production / staging
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Paste relevant logs, error messages, or attach screenshots.
+      render: shell
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of conduct
+      options:
+        - label: I agree to follow the [Code of Conduct](../CODE_OF_CONDUCT.md).
+          required: true
